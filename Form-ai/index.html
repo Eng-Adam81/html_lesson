@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    legend {
+      font-weight: bold;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 4px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .inline-group {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    button {
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <h2>Doctor Registration Form</h2>
+
+    <fieldset>
+      <legend>Personal Information</legend>
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob">
+
+      <label for="gender">Gender</label>
+      <div class="inline-group">
+        <input type="radio" id="male" name="gender" value="Male"><label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="Female"><label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="Other"><label for="other">Other</label>
+      </div>
+
+      <label for="photo">Upload Photo</label>
+      <input type="file" id="photo" name="photo">
+    </fieldset>
+
+    <fieldset>
+      <legend>Professional Information</legend>
+      <label for="specialty">Specialty</label>
+      <select id="specialty" name="specialty">
+        <option value="">Select Specialty</option>
+        <option>Cardiologist</option>
+        <option>Dentist</option>
+        <option>Dermatologist</option>
+        <option>General Physician</option>
+        <option>Neurologist</option>
+      </select>
+
+      <label for="experience">Years of Experience</label>
+      <input type="number" id="experience" name="experience" min="0">
+
+      <label for="license">License Number</label>
+      <input type="text" id="license" name="license" pattern="[A-Za-z0-9]{6,}">
+
+      <label for="available">Available Time</label>
+      <input type="time" id="available" name="available">
+    </fieldset>
+
+    <fieldset>
+      <legend>Contact & Preferences</legend>
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" placeholder="+1234567890">
+
+      <label for="website">Website</label>
+      <input type="url" id="website" name="website">
+
+      <label for="location">Search Location</label>
+      <input type="search" id="location" name="location">
+
+      <label for="clinic-color">Preferred Clinic Color</label>
+      <input type="color" id="clinic-color" name="clinic-color">
+
+      <label for="range">Weekly Availability (Hours)</label>
+      <input type="range" id="range" name="range" min="0" max="80">
+
+      <label for="languages">Languages Spoken</label>
+      <input list="langs" name="languages" id="languages">
+      <datalist id="langs">
+        <option value="English">
+        <option value="Spanish">
+        <option value="French">
+        <option value="Hindi">
+        <option value="Mandarin">
+      </datalist>
+
+      <label for="bio">Short Bio</label>
+      <textarea id="bio" name="bio" rows="4"></textarea>
+
+      <label>Consultation Options</label>
+      <div class="inline-group">
+        <input type="checkbox" id="inperson" name="consultation" value="In-person"><label for="inperson">In-person</label>
+        <input type="checkbox" id="online" name="consultation" value="Online"><label for="online">Online</label>
+        <input type="checkbox" id="home" name="consultation" value="Home Visit"><label for="home">Home Visit</label>
+      </div>
+    </fieldset>
+
+    <div>
+      <button type="submit">Register</button>
+      <button type="reset">Reset</button>
+    </div>
+  </form>
+</body>
+</html>
